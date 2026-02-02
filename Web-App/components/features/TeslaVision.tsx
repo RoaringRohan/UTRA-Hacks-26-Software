@@ -343,7 +343,8 @@ export default function TeslaVision({ isMatchActive, onLog, onArchive }: TeslaVi
             // State Update
             setActiveNavColor(foundColor);
             if (foundColor) {
-                setActiveNavAngle(foundAngle);
+                // Calibration Offset: Camera is tilted. -21 degrees raw = 0 degrees straight.
+                setActiveNavAngle(foundAngle + 21);
             } else {
                 setActiveNavAngle(0);
             }
